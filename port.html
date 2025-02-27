@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 100%;
+            background-color: #1f1f1f;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar h2 {
+            color: #ffcc00;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover, .sidebar ul li a.active-link {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .content {
+            margin-left: 240px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        section {
+            display: none;
+            padding: 50px 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .home-content h1 {
+            font-size: 3rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .home-content p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffcc00;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .cta .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #ffcc00;
+            color: black;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .cta .btn:hover {
+            background-color: #e6b800;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+            gap: 40px;
+            padding: 20px;
+            justify-items: center;
+            margin-top: 20px;
+        }
+
+        .skill {
+            text-align: center;
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .skill img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .skill p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #ffcc00;
+            font-weight: bold;
+        }
+
+        .skill:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>My Portfolio</h2>
+        <ul>
+            <li><a href="javascript:void(0);" class="nav-link active-link" data-target="home">Home</a></li>
+            <li><a href="javascript:void(0);" class="nav-link" data-target="about">About Me</a></li>
+            <li><a href="javascript:void(0);" class="nav-link" data-target="skills">Skills</a></li>
+            <li><a href="javascript:void(0);" class="nav-link" data-target="contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <section id="home" class="active">
+            <div class="home-content">
+                <h1>Welcome to My Portfolio</h1>
+                <p>Hello! I'm a passionate developer who loves to create innovative web applications.</p>
+                <img src="c:\Users\Necita\OneDrive\Pictures\kyle.jpeg" alt="Profile Image" class="profile-img">
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! Hi, my name is John kyle and I am a student in SIIT course is Information Technology. I am currently learning and developing my skills an I want to learn a programmer, I always push myself to learn the most every single day to achieve and to claim certificates.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <p>My skills include the following technologies:</p>
+            <div class="skills-container">
+                <!-- Example Skills with logos -->
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Logo">
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill">
+                    <img src="c:\Users\Necita\Downloads\tensor.png" alt="TensorFlow Logo">
+                    <p>TensorFlow</p>
+                </div>
+                <div class="skill">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo">
+                    <p>React</p>
+                </div>
+                <div class="skill">
+                    <img src="c:\Users\Necita\Downloads\bootstrap.jpg" alt="Bootstrap Logo">
+                    <p>Bootstrap</p>
+                </div>
+                <!-- Add more skills and logos here -->
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>12345678910</p>
+        </section>
+    </div>
+
+    <script>
+        // Function to handle the navigation
+        function setupNav() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Remove active classes from all sections and nav links
+                    sections.forEach(section => section.classList.remove('active'));
+                    navLinks.forEach(nav => nav.classList.remove('active-link'));
+
+                    // Show the target section and activate the clicked nav link
+                    const targetSection = document.getElementById(link.dataset.target);
+                    targetSection.classList.add('active');
+                    link.classList.add('active-link');
+                });
+            });
+        }
+
+        // Initialize the navigation functionality
+        setupNav();
+    </script>
+
+</body>
+</html>
